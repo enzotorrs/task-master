@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>task master</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main>
+        <h1>Task Master</h1>
+        <form action="">
+            <input data-form-input type="" placeholder="insira a tarefa aqui">
+            <button data-form-button>enviar</button>
+        </form>
+        <ul data-list>
+        </ul>
+    </main>
+    <script src="{{ url_for('static', filename='tarefas.js') }}"></script>
+</body>
+</html>
