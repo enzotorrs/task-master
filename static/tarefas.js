@@ -1,4 +1,5 @@
-(() => {const criarTarefa = (event) => {
+(() => {
+const criarTarefa = (event) => {
     event.preventDefault()
 
     const input = document.querySelector('[data-form-input]')
@@ -7,6 +8,7 @@
 
     tarefa.innerHTML = `<p>${input.value}</p>`
     tarefa.appendChild(BotaoConclui())
+    tarefa.appendChild(BotaoDeleta())
     list.insertBefore(tarefa, list.childNodes[0])
 
     input.value = ""
@@ -29,6 +31,22 @@ const concluiTarefa = (event) => {
     const botaoConclui = event.target
     const tarefaCompleta = botaoConclui.parentElement
     tarefaCompleta.classList.toggle('done')
+}
+
+const BotaoDeleta = () => {
+    const botaoDeleta = document.createElement('button')
+    botaoDeleta.innerText = 'deletar'
+    botaoDeleta.addEventListener('click', deletarTarefa)
+
+    return botaoDeleta
+}
+
+const deletarTarefa = (event) => {
+    const botaoDeleta = event.target
+    const tarefaCompleta = botaoDeleta.parentElement
+
+    tarefaCompleta.remove()
+
 }
 })()
 
