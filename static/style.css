@@ -80,9 +80,18 @@ body {
 .done p {
     text-decoration: line-through ;
 }
+.done .botao-concluir{
+    opacity: 0.8;
+}
 .fadeout {
     opacity: 0;
     transition-duration: 0.5s;
+}
+
+button:hover {
+    transition: all;
+    transition-duration: 0.5s;
+    opacity: 0.8;
 }
 
 @media screen and (max-width: 1023px){
