@@ -10,11 +10,13 @@ body {
     border: solid 1px white;
     padding: 1rem 1rem;
     margin-top: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .titulo-principal {
-    border-bottom:  solid 1px #222;
+    border-bottom:  solid 1px #aaa;
     font-size: 2em;
+    color: #111;
 }
 
 .formulario-principal {
@@ -28,12 +30,14 @@ body {
     border-radius: 5px 0 0 5px;
     padding: 0.2rem 0.4rem;
     border: solid 2px white;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .formulario-principal button {
     font-size: inherit;
     padding: 0.5rem;
     border-radius: 0 5px 5px 0;
     border: solid 2px white;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
 }
 .lista-tarefas {
@@ -58,10 +62,12 @@ body {
     width: auto;
     overflow: hidden;
     font-size: inherit;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
 }
 
 .lista-tarefas button {
+    color: #222;
     height: 50%;
     font-size: inherit;
     border-radius: 5px;
@@ -69,10 +75,11 @@ body {
     margin-right: 0.3rem;
     padding: 0.5rem;
     align-self: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
 }
 .lista-tarefas .botao-deleta {
-    background-color: rgba(255, 0, 0, 0.8);
+    background-color: rgba(255, 0, 0, 0.6);
 }
 .lista-tarefas .botao-concluir {
     background-color: #346751;
