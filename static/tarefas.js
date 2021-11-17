@@ -9,8 +9,15 @@ const criarTarefa = (event) => {
     const tarefa = document.createElement('li')
 
     tarefa.innerHTML = `<p>${input.value}</p>`
-    tarefa.appendChild(BotaoConclui())
-    tarefa.appendChild(BotaoDeleta())
+
+    const botoes= document.createElement('div')
+
+    botoes.appendChild(BotaoConclui())
+    botoes.appendChild(BotaoDeleta())
+    botoes.classList.add('divisao-botoes')
+
+    tarefa.appendChild(botoes)
+
     list.insertBefore(tarefa, list.childNodes[0])
 
     input.value = ""

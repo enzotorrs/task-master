@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <title>task master</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
 </head>
 <body>
     <main>
-        <h1>Task Master</h1>
-        <form action="">
-            <input data-form-input type="" placeholder="insira a tarefa aqui">
-            <button data-form-button>enviar</button>
-        </form>
-        <ul data-list>
-        </ul>
+        <div class="container" >
+            <h1 class="titulo-principal">Task Master</h1>
+            <form  class="formulario-principal">
+                <input data-form-input type="" placeholder="insira a tarefa aqui" required>
+                <button data-form-button>enviar</button>
+            </form>
+            <ul class="lista-tarefas" data-list>
+            </ul>
+        </div>
     </main>
     <script type="module" src="{{ url_for('static', filename='tarefas.js') }}"></script>
 </body>

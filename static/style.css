@@ -1,3 +1,72 @@
+body {
+    background-color: #261C2C;
+}
+
+.container {
+    width: 40%;
+    margin: auto;
+    background-color: #5C527F;
+    border-radius: 5px;
+    border: solid 1px white;
+    padding: 1rem 2rem;
+}
+
+.titulo-principal {
+    border-bottom:  solid 1px #222;
+    font-size: 2em;
+}
+
+.formulario-principal {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.formulario-principal input {
+    font-size: 1em;
+    border-radius: 5px 0 0 5px;
+    padding: 0.2rem 0.4rem;
+    border: solid 2px white;
+}
+.formulario-principal button {
+    font-size: 0.8em;
+    padding: 0.5rem;
+    border-radius: 0 5px 5px 0;
+    border: solid 2px white;
+
+}
+.lista-tarefas {
+    list-style-type: none;
+    margin-top: 1rem;
+    font-size: 1.5em;
+}
+
+.lista-tarefas li {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #6E85B2;
+    padding: 1rem ;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    min-width: 50%;
+    width: auto;
+}
+.lista-tarefas .divisao-botoes {
+
+}
+
+.lista-tarefas button {
+    height: 50%;
+    font-size: 0.7em;
+    border-radius: 5px;
+    border: solid 1px white;
+    margin-right: 0.3rem;
+    padding: 0.3rem;
+
+}
+.lista-tarefas .botao-deleta {
+    background-color: rgba(255, 0, 0, 0.8);
+}
 .done {
-    text-decoration: line-through;
+    text-decoration: line-through ;
 }
