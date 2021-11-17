@@ -51,9 +51,7 @@ body {
     margin-bottom: 1rem;
     min-width: 50%;
     width: auto;
-}
-.lista-tarefas .divisao-botoes {
-
+    overflow: hidden;
 }
 
 .lista-tarefas button {
@@ -73,4 +71,8 @@ body {
 }
 .done {
     text-decoration: line-through ;
+}
+.fadeout {
+    opacity: 0;
+    transition-duration: 0.5s;
 }
