@@ -9,6 +9,7 @@ body {
     border-radius: 5px;
     border: solid 1px white;
     padding: 1rem 2rem;
+    margin-top: 1rem;
 }
 
 .titulo-principal {
@@ -61,11 +62,14 @@ body {
     border-radius: 5px;
     border: solid 1px white;
     margin-right: 0.3rem;
-    padding: 0.3rem;
+    padding: 0.5rem;
 
 }
 .lista-tarefas .botao-deleta {
     background-color: rgba(255, 0, 0, 0.8);
+}
+.lista-tarefas .botao-concluir {
+    background-color: #346751;
 }
 .done {
     text-decoration: line-through ;
