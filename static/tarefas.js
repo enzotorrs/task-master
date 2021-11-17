@@ -1,4 +1,6 @@
-(() => {
+import BotaoDeleta from "./botaoDeleta.js"
+import BotaoConclui from "./botaoConclui.js"
+
 const criarTarefa = (event) => {
     event.preventDefault()
 
@@ -13,40 +15,9 @@ const criarTarefa = (event) => {
 
     input.value = ""
 }
+
 const novaTarefa = document.querySelector('[data-form-button]')
 
 
 novaTarefa.addEventListener('click', criarTarefa)
-
-const BotaoConclui = () => {
-    const botaoConclui = document.createElement('button')
-    botaoConclui.innerText = 'concluir'
-
-    botaoConclui.addEventListener('click', concluiTarefa)
-
-    return botaoConclui
-}
-
-const concluiTarefa = (event) => {
-    const botaoConclui = event.target
-    const tarefaCompleta = botaoConclui.parentElement
-    tarefaCompleta.classList.toggle('done')
-}
-
-const BotaoDeleta = () => {
-    const botaoDeleta = document.createElement('button')
-    botaoDeleta.innerText = 'deletar'
-    botaoDeleta.addEventListener('click', deletarTarefa)
-
-    return botaoDeleta
-}
-
-const deletarTarefa = (event) => {
-    const botaoDeleta = event.target
-    const tarefaCompleta = botaoDeleta.parentElement
-
-    tarefaCompleta.remove()
-
-}
-})()
 
