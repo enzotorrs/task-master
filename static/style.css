@@ -77,7 +77,7 @@ body {
 .lista-tarefas .botao-concluir {
     background-color: #346751;
 }
-.done {
+.done p {
     text-decoration: line-through ;
 }
 .fadeout {
