@@ -10,7 +10,7 @@ const BotaoConclui = () => {
 
 const concluiTarefa = (event) => {
     const botaoConclui = event.target
-    const tarefaCompleta = botaoConclui.parentElement.parentElement
+    const tarefaCompleta = botaoConclui.parentElement
     tarefaCompleta.classList.toggle('done')
 }
 

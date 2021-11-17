@@ -9,7 +9,7 @@ const BotaoDeleta = () => {
 
 const deletarTarefa = (event) => {
     const botaoDeleta = event.target
-    const tarefaCompleta = botaoDeleta.parentElement.parentElement
+    const tarefaCompleta = botaoDeleta.parentElement
     tarefaCompleta.classList.add('fadeout')
 
     setTimeout(() => {
