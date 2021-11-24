@@ -13,13 +13,15 @@
         <div class="container" >
             <h1 class="titulo-principal">Task Master</h1>
             <form  class="formulario-principal">
-                <input data-form-input type="" placeholder="insira a tarefa aqui" required>
+                <input data-form-input type="text" placeholder="insira a tarefa aqui" required>
+                <input class="formulario-input-date" type="datetime-local" data-form-date>
                 <button data-form-button>enviar</button>
             </form>
             <ul class="lista-tarefas" data-list>
             </ul>
         </div>
     </main>
-    <script type="module" src="{{ url_for('static', filename='tarefas.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script type="module" src="{{ url_for('static', filename='script/tarefas.js') }}"></script>
 </body>
 </html>
