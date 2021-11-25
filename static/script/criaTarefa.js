@@ -31,13 +31,18 @@ const salvaTarefa = (tarefa) => {
     localStorage.setItem('tarefas', JSON.stringify(tarefasAtualizadas))
 
 }
+export const insereTarefa = (tarefa) => {
+    const data = document.querySelector(`[data="${tarefa.dataFormatada}"]`)
+    console.log(data)
 
+    data.appendChild(Tarefa(tarefa))
+
+}
 export const criarTarefa = (event) => {
     event.preventDefault()
 
     const input = document.querySelector('[data-form-input]')
     const date = document.querySelector('[data-form-date]')
-    const list = document.querySelector('[data-list]')
 
     const textoTarefa = input.value
     const dataFormatada = formataData(date)
@@ -52,8 +57,7 @@ export const criarTarefa = (event) => {
 
     salvaTarefa(dados)
 
-    const novaTarefa = Tarefa(dados)
-    list.insertBefore(novaTarefa, list.childNodes[0])
+    insereTarefa(dados)
 
     input.value = ""
 
