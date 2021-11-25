@@ -1,16 +1,21 @@
 import BotaoDeleta from "./botaoDeleta.js"
 import BotaoConclui from "./botaoConclui.js"
 
-const formataData = (date) => {
-    const dataFormatada = moment(date.value)
+const formataData = (data) => {
+    const dataFormatada = moment(data.value)
 
-    return dataFormatada.format('DD/MM/YY HH:mm')
+    return dataFormatada.format('DD/MM/YY ')
 }
 
-export const Tarefa = ({ textoTarefa, dataFormatada }) => {
+const formataHora = (hora) => {
+    const horaFormatada = moment(hora.value)
+
+    return horaFormatada.format('HH:mm')
+}
+export const Tarefa = ({ textoTarefa, horaFormatada}) => {
     const tarefa = document.createElement('li')
 
-    tarefa.innerHTML = `<p>${dataFormatada} * ${textoTarefa} </p>`
+    tarefa.innerHTML = `<p>${horaFormatada} * ${textoTarefa} </p>`
 
     tarefa.appendChild(BotaoConclui())
     tarefa.appendChild(BotaoDeleta())
@@ -35,12 +40,14 @@ export const criarTarefa = (event) => {
     const list = document.querySelector('[data-list]')
 
     const textoTarefa = input.value
-
     const dataFormatada = formataData(date)
+    const horaFormatada = formataHora(date)
+
 
     const dados = {
         textoTarefa,
-        dataFormatada
+        dataFormatada,
+        horaFormatada
     }
 
     salvaTarefa(dados)
