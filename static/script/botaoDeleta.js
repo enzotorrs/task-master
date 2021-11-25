@@ -7,6 +7,17 @@ const BotaoDeleta = () => {
     return botaoDeleta
 }
 
+const removeTarefa = (tarefaCompleta) => {
+    const tarefasCadastradas = JSON.parse(localStorage.getItem('tarefas'))
+
+    const indiceTarefa = tarefasCadastradas.indexOf(tarefaCompleta.value)
+    tarefasCadastradas.splice(indiceTarefa, 1)
+
+    localStorage.setItem('tarefas', JSON.stringify(tarefasCadastradas))
+
+    tarefaCompleta.remove()
+}
+
 const deletarTarefa = (event) => {
     const botaoDeleta = event.target
     const tarefaCompleta = botaoDeleta.parentElement
