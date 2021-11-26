@@ -11,7 +11,23 @@ const BotaoConclui = () => {
 const concluiTarefa = (event) => {
     const botaoConclui = event.target
     const tarefaCompleta = botaoConclui.parentElement
-    tarefaCompleta.classList.toggle('done')
+    const result = tarefaCompleta.classList.toggle('done')
+    const tarefasCadastradas = JSON.parse(localStorage.getItem('tarefas')) || []
+    if (result){
+        tarefasCadastradas.forEach((tarefa) => {
+            if (tarefa.id === tarefaCompleta.dataset.id){
+                tarefa.concluido = true
+            }
+        })
+    }else{
+        tarefasCadastradas.forEach((tarefa) => {
+            if (tarefa.id === tarefaCompleta.dataset.id){
+                tarefa.concluido = false
+            }
+        })
+
+    }
+    localStorage.setItem('tarefas', JSON.stringify(tarefasCadastradas))
 }
 
 export default BotaoConclui

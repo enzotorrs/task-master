@@ -53,12 +53,15 @@ export const criarTarefa = (event) => {
     const horaFormatada = formataHora(date)
 
     const id = geraId()
+    const concluido = false
+
     console.log(id)
     const dados = {
         textoTarefa,
         dataFormatada,
         horaFormatada,
-        id
+        id,
+        concluido
     }
 
     salvaTarefa(dados)
