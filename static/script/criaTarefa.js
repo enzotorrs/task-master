@@ -1,33 +1,17 @@
 import { Tarefa } from "./tarefa.js"
+import { formataData, formataHora, geraId, recebeStorage, atualizaStorage } from "./utils.js"
 
-
-const formataData = (data) => {
-    const dataFormatada = moment(data.value)
-
-    return dataFormatada.format('DD/MM/YY')
-}
-
-const formataHora = (hora) => {
-    const horaFormatada = moment(hora.value)
-
-    return horaFormatada.format('HH:mm')
-}
 
 const salvaTarefa = (tarefa) => {
-    const tarefas = JSON.parse(localStorage.getItem('tarefas')) || []
+    const tarefas = recebeStorage()
     const tarefasAtualizadas = [...tarefas, tarefa]
 
-    localStorage.setItem('tarefas', JSON.stringify(tarefasAtualizadas))
-
+    atualizaStorage(tarefasAtualizadas)
 }
 
-const geraId = () => {
-    const data = moment()
-    return data.format('DDMMYYYY HHMMSS')
-
-}
 export const insereTarefa = (tarefa) => {
     const data = document.querySelector(`[data="${tarefa.dataFormatada}"]`)
+
     if (data != null){
         data.appendChild(Tarefa(tarefa))
     }else{

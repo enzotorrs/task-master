@@ -1,5 +1,7 @@
+import { recebeStorage } from "./utils.js";
+
 export const criaData = () =>  {
-    const tarefas = JSON.parse(localStorage.getItem('tarefas')) || []
+    const tarefas = recebeStorage() 
     const list = document.querySelector('[data-list]')
 
     const dates = [...tarefas]

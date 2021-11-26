@@ -1,3 +1,5 @@
+import {atualizaStorage, recebeStorage} from "./utils.js"
+
 const BotaoConclui = () => {
     const botaoConclui = document.createElement('button')
     botaoConclui.innerText = 'concluir'
@@ -12,7 +14,7 @@ const concluiTarefa = (event) => {
     const botaoConclui = event.target
     const tarefaCompleta = botaoConclui.parentElement
     const result = tarefaCompleta.classList.toggle('done')
-    const tarefasCadastradas = JSON.parse(localStorage.getItem('tarefas')) || []
+    const tarefasCadastradas = recebeStorage()
     if (result){
         tarefasCadastradas.forEach((tarefa) => {
             if (tarefa.id === tarefaCompleta.dataset.id){
@@ -27,7 +29,7 @@ const concluiTarefa = (event) => {
         })
 
     }
-    localStorage.setItem('tarefas', JSON.stringify(tarefasCadastradas))
+    atualizaStorage(tarefasCadastradas)
 }
 
 export default BotaoConclui

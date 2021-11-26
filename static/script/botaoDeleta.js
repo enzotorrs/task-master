@@ -1,3 +1,5 @@
+import {atualizaStorage, recebeStorage} from "./utils.js"
+
 const BotaoDeleta = () => {
     const botaoDeleta = document.createElement('button')
     botaoDeleta.innerText = 'deletar'
@@ -8,12 +10,12 @@ const BotaoDeleta = () => {
 }
 
 const removeTarefa = (tarefaCompleta) => {
-    const tarefasCadastradas = JSON.parse(localStorage.getItem('tarefas'))
+    const tarefasCadastradas = recebeStorage()
     const tarefasAtualizadas = tarefasCadastradas.filter((tarefa) => {
         return tarefa.id != tarefaCompleta.dataset.id
     })
 
-    localStorage.setItem('tarefas', JSON.stringify(tarefasAtualizadas))
+    atualizaStorage(tarefasAtualizadas)
 
     tarefaCompleta.remove()
 }
