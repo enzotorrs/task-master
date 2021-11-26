@@ -1,7 +1,19 @@
+export const recebeDataAtual = () => {
+    const data = moment()
+    return data.format('DD/MM/YY')
+
+}
+
 export const formataData = (data) => {
     const dataFormatada = moment(data.value)
 
     return dataFormatada.format('DD/MM/YY')
+}
+
+export const recebeHoraAtual = () => {
+    const data = moment()
+    return data.format('HH:mm')
+
 }
 
 export const formataHora = (hora) => {

@@ -1,5 +1,6 @@
 import { Tarefa } from "./tarefa.js"
-import { formataData, formataHora, geraId, recebeStorage, atualizaStorage } from "./utils.js"
+import { formataData, formataHora, geraId, recebeStorage,
+         atualizaStorage, recebeDataAtual, recebeHoraAtual } from "./utils.js"
 
 
 const salvaTarefa = (tarefa) => {
@@ -14,6 +15,7 @@ export const insereTarefa = (tarefa) => {
 
     if (data != null){
         data.appendChild(Tarefa(tarefa))
+
     }else{
         const novaData = document.createElement('ul')
         novaData.innerHTML = `<ul data=${tarefa.dataFormatada}><p>${tarefa.dataFormatada}</p></ul>`
@@ -33,13 +35,17 @@ export const criarTarefa = (event) => {
     const date = document.querySelector('[data-form-date]')
 
     const textoTarefa = input.value
-    const dataFormatada = formataData(date)
-    const horaFormatada = formataHora(date)
+    let horaFormatada = formataHora(date)
+    let dataFormatada = formataData(date)
+
+    if (dataFormatada === 'Invalid date'){
+        dataFormatada = recebeDataAtual()
+        horaFormatada = recebeHoraAtual()
+    }
 
     const id = geraId()
     const concluido = false
 
-    console.log(id)
     const dados = {
         textoTarefa,
         dataFormatada,
