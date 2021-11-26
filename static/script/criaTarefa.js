@@ -4,7 +4,7 @@ import { Tarefa } from "./tarefa.js"
 const formataData = (data) => {
     const dataFormatada = moment(data.value)
 
-    return dataFormatada.format('DD/MM/YY ')
+    return dataFormatada.format('DD/MM/YY')
 }
 
 const formataHora = (hora) => {
@@ -18,6 +18,12 @@ const salvaTarefa = (tarefa) => {
     const tarefasAtualizadas = [...tarefas, tarefa]
 
     localStorage.setItem('tarefas', JSON.stringify(tarefasAtualizadas))
+
+}
+
+const geraId = () => {
+    const data = moment()
+    return data.format('DDMMYYYY HHMMSS')
 
 }
 export const insereTarefa = (tarefa) => {
@@ -46,11 +52,13 @@ export const criarTarefa = (event) => {
     const dataFormatada = formataData(date)
     const horaFormatada = formataHora(date)
 
-
+    const id = geraId()
+    console.log(id)
     const dados = {
         textoTarefa,
         dataFormatada,
-        horaFormatada
+        horaFormatada,
+        id
     }
 
     salvaTarefa(dados)

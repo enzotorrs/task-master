@@ -9,11 +9,11 @@ const BotaoDeleta = () => {
 
 const removeTarefa = (tarefaCompleta) => {
     const tarefasCadastradas = JSON.parse(localStorage.getItem('tarefas'))
+    const tarefasAtualizadas = tarefasCadastradas.filter((tarefa) => {
+        return tarefa.id != tarefaCompleta.dataset.id
+    })
 
-    const indiceTarefa = tarefasCadastradas.indexOf(tarefaCompleta.value)
-    tarefasCadastradas.splice(indiceTarefa, 1)
-
-    localStorage.setItem('tarefas', JSON.stringify(tarefasCadastradas))
+    localStorage.setItem('tarefas', JSON.stringify(tarefasAtualizadas))
 
     tarefaCompleta.remove()
 }
@@ -21,10 +21,11 @@ const removeTarefa = (tarefaCompleta) => {
 const deletarTarefa = (event) => {
     const botaoDeleta = event.target
     const tarefaCompleta = botaoDeleta.parentElement
+    console.log(tarefaCompleta.innerText)
     tarefaCompleta.classList.add('fadeout')
 
     setTimeout(() => {
-        tarefaCompleta.remove()
+        removeTarefa(tarefaCompleta)
     }, 450)
 
 }
