@@ -33,9 +33,16 @@ const salvaTarefa = (tarefa) => {
 }
 export const insereTarefa = (tarefa) => {
     const data = document.querySelector(`[data="${tarefa.dataFormatada}"]`)
-    console.log(data)
+    if (data != null){
+        data.appendChild(Tarefa(tarefa))
+    }else{
+        const novaData = document.createElement('ul')
+        novaData.innerHTML = `<ul data=${tarefa.dataFormatada}><p>${tarefa.dataFormatada}</p></ul>`
+        novaData.appendChild(Tarefa(tarefa))
 
-    data.appendChild(Tarefa(tarefa))
+        const list = document.querySelector('[data-list]')
+        list.appendChild(novaData)
+    }
 
 }
 export const criarTarefa = (event) => {
