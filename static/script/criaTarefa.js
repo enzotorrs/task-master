@@ -1,5 +1,5 @@
-import BotaoDeleta from "./botaoDeleta.js"
-import BotaoConclui from "./botaoConclui.js"
+import { Tarefa } from "./tarefa.js"
+
 
 const formataData = (data) => {
     const dataFormatada = moment(data.value)
@@ -11,17 +11,6 @@ const formataHora = (hora) => {
     const horaFormatada = moment(hora.value)
 
     return horaFormatada.format('HH:mm')
-}
-export const Tarefa = ({ textoTarefa, horaFormatada}) => {
-    const tarefa = document.createElement('li')
-
-    tarefa.innerHTML = `<p>${horaFormatada} * ${textoTarefa} </p>`
-
-    tarefa.appendChild(BotaoConclui())
-    tarefa.appendChild(BotaoDeleta())
-
-    return tarefa
-
 }
 
 const salvaTarefa = (tarefa) => {
@@ -42,6 +31,8 @@ export const insereTarefa = (tarefa) => {
 
         const list = document.querySelector('[data-list]')
         list.appendChild(novaData)
+
+        window.location.reload();
     }
 
 }

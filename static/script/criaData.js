@@ -2,8 +2,16 @@ export const criaData = () =>  {
     const tarefas = JSON.parse(localStorage.getItem('tarefas')) || []
     const list = document.querySelector('[data-list]')
 
+    const dates = [...tarefas]
+    const tarefasOrdenadas = dates.sort((a, b) => {
+        const dataA = moment(a.dataFormatada, "DD/MM/YYYY")
+        const dataB = moment(b.dataFormatada, "DD/MM/YYYY")
+
+        return dataA - dataB;
+    });
+
     const datas = []
-    tarefas.forEach((tarefa) => {
+    tarefasOrdenadas.forEach((tarefa) => {
         const data = document.createElement('ul')
 
         if (datas.indexOf(tarefa.dataFormatada) === -1){
