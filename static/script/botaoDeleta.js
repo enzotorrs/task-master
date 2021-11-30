@@ -10,26 +10,31 @@ const BotaoDeleta = () => {
 }
 
 const removeTarefa = (tarefaCompleta) => {
+    const listaTarefa = tarefaCompleta.parentNode
     const tarefasCadastradas = recebeStorage()
+
     const tarefasAtualizadas = tarefasCadastradas.filter((tarefa) => {
         return tarefa.id != tarefaCompleta.dataset.id
     })
 
     atualizaStorage(tarefasAtualizadas)
 
-    tarefaCompleta.remove()
+    tarefaCompleta.classList.add('fadeout')
+    setTimeout(() => {
+        tarefaCompleta.remove()
+        console.log(listaTarefa.childElementCount)
+        if(listaTarefa.childElementCount < 2){
+            listaTarefa.remove()
+        }
+    }, 450)
+
 }
 
 const deletarTarefa = (event) => {
     const botaoDeleta = event.target
     const tarefaCompleta = botaoDeleta.parentElement
 
-    tarefaCompleta.classList.add('fadeout')
-
-    setTimeout(() => {
-        removeTarefa(tarefaCompleta)
-    }, 450)
-
+    removeTarefa(tarefaCompleta)
 }
 
 export default BotaoDeleta
