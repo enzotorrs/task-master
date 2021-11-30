@@ -18,7 +18,7 @@ export const criaData = () =>  {
 
         data.setAttribute("data", `${tarefa.dataFormatada}`)
         if (datas.indexOf(tarefa.dataFormatada) === -1){
-            data.innerHTML = `<p>${tarefa.dataFormatada}</p>`
+            data.innerHTML = `<span class="lista-data">${tarefa.dataFormatada}</span>`
             list.append(data)
             datas.push(tarefa.dataFormatada)
 

@@ -54,6 +54,10 @@ body {
     font-size: 1em;
 }
 
+.lista-data {
+    padding: 0.4rem;
+}
+
 .lista-tarefas p {
     width: 72%;
 }
@@ -65,7 +69,8 @@ body {
     background-color: #6E85B2;
     padding: 1rem ;
     border-radius: 5px;
-    margin-bottom: 1rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.8rem;
     min-width: 50%;
     width: auto;
     overflow: hidden;
@@ -74,6 +79,11 @@ body {
 
 }
 
+.lista-tarefas .tarefa-hora {
+    margin-left: 0.3rem;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
 .lista-tarefas button {
     color: #222;
     height: 50%;

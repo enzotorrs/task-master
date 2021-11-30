@@ -8,7 +8,7 @@ export const Tarefa = ({ textoTarefa, horaFormatada, id, concluido}) => {
         tarefa.classList.add('done')
     }
     
-    tarefa.innerHTML = `<p>${horaFormatada} * ${textoTarefa} </p>`
+    tarefa.innerHTML = `<p>${textoTarefa}<span class="tarefa-hora">${horaFormatada}</span> </p>`
 
     tarefa.appendChild(BotaoConclui())
     tarefa.appendChild(BotaoDeleta())
