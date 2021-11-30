@@ -1,5 +1,6 @@
 body {
     background-color: #261C2C;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .container {
@@ -17,6 +18,8 @@ body {
     border-bottom:  solid 1px #aaa;
     font-size: 2em;
     color: #111;
+    font-family: 'Montserrat', sans-serif;   
+    font-weight: 500;
 }
 
 .formulario-principal {
