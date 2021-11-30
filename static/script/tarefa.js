@@ -7,8 +7,8 @@ export const Tarefa = ({ textoTarefa, horaFormatada, id, concluido}) => {
     if (concluido){
         tarefa.classList.add('done')
     }
-    
-    tarefa.innerHTML = `<p>${textoTarefa}<span class="tarefa-hora">${horaFormatada}</span> </p>`
+
+    tarefa.innerHTML = `<div><p>${textoTarefa}</p><span class="tarefa-hora">${horaFormatada}</span></div>`
 
     tarefa.appendChild(BotaoConclui())
     tarefa.appendChild(BotaoDeleta())

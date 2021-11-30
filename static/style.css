@@ -58,8 +58,10 @@ body {
     padding: 0.4rem;
 }
 
-.lista-tarefas p {
+.lista-tarefas div {
     width: 72%;
+    display: flex;
+    align-items: baseline
 }
 
 .lista-tarefas li {
@@ -103,11 +105,16 @@ body {
     background-color: #346751;
 }
 .done p {
-    text-decoration: line-through ;
+    text-decoration: line-through;
 }
 .done .botao-concluir{
     opacity: 0.8;
 }
+
+.done .lista-data{
+    text-decoration: none;
+}
+
 .fadeout {
     opacity: 0;
     transition-duration: 0.5s;
@@ -129,6 +136,10 @@ button:hover {
     }
     .formulario-principal {
         font-size: 1em;
+    }
+    .formulario-input-date {
+        max-height: 50px;
+        overflow: hidden;
     }
     .lista-tarefas{
         font-size: 1em;
