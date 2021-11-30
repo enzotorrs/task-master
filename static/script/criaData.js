@@ -16,8 +16,9 @@ export const criaData = () =>  {
     tarefasOrdenadas.forEach((tarefa) => {
         const data = document.createElement('ul')
 
+        data.setAttribute("data", `${tarefa.dataFormatada}`)
         if (datas.indexOf(tarefa.dataFormatada) === -1){
-            data.innerHTML = `<ul data="${tarefa.dataFormatada}"><p>${tarefa.dataFormatada}</p></ul>`
+            data.innerHTML = `<p>${tarefa.dataFormatada}</p>`
             list.append(data)
             datas.push(tarefa.dataFormatada)
 
