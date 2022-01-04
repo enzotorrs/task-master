@@ -1,6 +1,6 @@
 ## Task-Master
 
-![print of app](https://raw.githubusercontent.com/0zob/task-master/master/dev/images/print_task_master.png)
+![print of app](https://raw.githubusercontent.com/0zob/task-master/master/images/print_task_master.png)
 
 ## About
 
