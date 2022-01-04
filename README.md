@@ -1,8 +1,8 @@
 ## Task-Master
 
-![print of app](https://raw.githubusercontent.com/0zob/task-master/dev/images/print_task_master.png)
+![print of app](https://raw.githubusercontent.com/0zob/task-master/master/dev/images/print_task_master.png)
 
-##About
+## About
 
 web todo app made for practice javascript html css and flask.
 
